@@ -1,0 +1,5 @@
+$domainName = 'bastion.prevenity.com' 
+$pwd = ‘_your_password_' 
+$securepwd = convertto-securestring $pwd -asplaintext -force
+Install-WindowsFeature –Name AD-Domain-Services -IncludeManagementTools
+Install-ADDSForest -DomainName $domainName -InstallDns -Force -Confirm:$false -SafeModeAdministratorPassword $securepwd

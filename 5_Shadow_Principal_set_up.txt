@@ -1,0 +1,8 @@
+$ProdPrincipal = 'Domain Admins'
+$ProdDC = 'dc.ad.prevenity.com'
+$ShadowSuffix = 'PROD-'
+$ProdShadowPrincipal = Get-ADGroup -Identity $ProdPrincipal -Properties ObjectSID -Server $ProdDC
+$ShadowPrincipalContainer = 'CN=Shadow Principal Configuration,CN=Services,'+(Get-ADRootDSE).
+configurationNamingContext
+New-ADObject -Type msDS-ShadowPrincipal -Name "$ShadowSuffix$($ProdShadowPrincipal.SamAccount
+Name)" -Path $ShadowPrincipalContainer -OtherAttributes @{'msDS-ShadowPrincipalSid'= $ProdShadowPrincipal.ObjectSID}

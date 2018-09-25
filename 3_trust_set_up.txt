@@ -1,0 +1,5 @@
+netdom trust ad.prevenity.com /Domain:bastion.prevenity.com /Add /UserD:administrator@bastion.prevenity.com /PasswordD:* /UserO:administrator@ad.prevenity.com /PasswordO:*
+netdom trust ad.prevenity.com /Domain:bastion.prevenity.com /ForestTRANsitive:Yes
+netdom trust ad.prevenity.com /Domain:bastion.prevenity.com /EnableSIDHistory:Yes
+netdom trust ad.prevenity.com /Domain:bastion.prevenity.com /EnablePIMTrust:Yes
+netdom trust ad.prevenity.com /Domain:bastion.prevenity.com /Quarantine:No

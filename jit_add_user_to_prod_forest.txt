@@ -1,0 +1,1 @@
+Set-ADObject -Identity "CN=Prod-Domain Admins,CN=Shadow Principal Configuration,CN=Services,CN=Configuration,DC=bastion,DC=prevenity,dc=com" -Add @{'member'="<TTL=600,CN=jarek.adm2,OU=PROD-Shadow,DC=bastion,DC=prevenity,DC=com>"}
